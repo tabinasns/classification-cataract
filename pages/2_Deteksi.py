@@ -11,8 +11,8 @@ import base64
 
 # Load the trained model
 # Ubah ini dengan H5 mu Cap! 
-model_katarak = load_model('model/model_mobilenet_katarak.keras', compile=False)
-model_fundus = load_model('model/model_mobilenet_fundus.keras', compile=False)
+model_katarak = tf.keras.models.load_model('model/model_mobilenet_katarak.keras', compile=False)
+model_fundus = tf.keras.models.load_model('model/model_mobilenet_fundus.keras', compile=False)
 
 # Resize atur juga jgn lupa, samakan dengan model mu make pixel berapa!!
 # Fungsi preprocessing untuk CLAHE dan konversi ke grayscale
