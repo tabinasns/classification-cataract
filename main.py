@@ -1,8 +1,7 @@
 import streamlit as st
 import time
-import importlib
-from streamlit_extras.switch_page_button import switch_page
 
+# ❗ Hanya di sini kita boleh set page config
 st.set_page_config(
     page_title="Klasifikasi Katarak",
     page_icon="🧊",
@@ -10,28 +9,19 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# -------- SPLASH SCREEN -------- #
+# Styling splash screen
 st.markdown("""
     <style>
-        [data-testid="stSidebar"] {
-            display: none;
-        }
-            /* Sembunyikan tombol expander sidebar */
-        [data-testid="collapsedControl"] {
-            display: none;
-        }
         .splash-title {
             text-align: center;
             font-size: 2.5em;
             font-weight: bold;
-            font-family: 'Segoe UI';
             margin-top: 2em;
         }
         .splash-subtitle {
             text-align: center;
             font-size: 1.2em;
             color: #666;
-            font-family: 'Segoe UI';
             margin-bottom: 2em;
         }
         .loader {
@@ -43,24 +33,6 @@ st.markdown("""
             animation: spin 1s linear infinite;
             margin: auto;
         }
-        [data-testid="stSidebarNav"]::before {
-            display: none;
-        }
-        [data-testid="stSidebarNav"] {
-            display: none;
-        }   
-        [data-testid="stSidebar"] {
-            background-color: #33D621;
-            border-right: 2px solid #ccc;
-        }
-        
-        [data-testid="stSidebar"] {
-            background-color: transparent;
-            box-shadow: none;
-        }
-        [data-testid="stSidebar"] header {
-            display: none;
-        }
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -68,19 +40,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.sidebar.markdown(
-    """
-    <h3 style='text-align:center;'>🧠 Deteksi Katarak AI</h3>
-    <hr style='margin-top: 0.5em; margin-bottom: 1em;'>
-    """, unsafe_allow_html=True
-)
-
+# Splash screen content
 st.markdown('<div class="splash-title">Website Deteksi Katarak</div>', unsafe_allow_html=True)
 st.markdown('<div class="splash-subtitle">Menggunakan Model CNN & Citra Fundus Retina</div>', unsafe_allow_html=True)
 st.markdown('<div class="loader"></div>', unsafe_allow_html=True)
 
-# Delay 3 detik (waktu splash screen)
+# Delay splash
 time.sleep(3)
 
-# Redirect ke halaman beranda
-switch_page("1_beranda")
+# ❗ Redirect manual pakai JavaScript (tanpa switch_page)
+st.markdown(
+    """<meta http-equiv="refresh" content="0;url=./Beranda">""",
+    unsafe_allow_html=True
+)

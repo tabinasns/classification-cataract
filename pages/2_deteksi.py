@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Deteksi Katarak", initial_sidebar_state="collapsed", layout="wide")
+st.set_page_config(page_title="Deteksi Katarak", layout="wide")
 
 import numpy as np
 import cv2
@@ -255,7 +255,7 @@ with st.container():
         
         # Upload Gambar Anda Expander
         st.markdown("<div class='upload-expander'>", unsafe_allow_html=True)
-        with st.expander("📤 Unggah Gambar Citra Fundus Mata", expanded=True):
+        with st.expander("📤 Unggah Gambar Citra Fundus Mata"):
             st.write("Pilih dan unggah citra fundus yang akan dianalisis. Pastikan gambar jelas dan tidak buram untuk hasil deteksi terbaik.")
         
         # Analisis Gambar Expander
@@ -281,7 +281,7 @@ if uploaded_file is not None:
     
     if fundus_predict[0][0] >= 0.5:
         prediction, clahe_image = predict_cataract(image)
-                   
+                
         # INI JUGA PERHATIKAN KATARAK OR NOT NYA, klo kebalik kebalik coba tanda '>' di otak atik
         # Assuming the output is a single probability for the positive class
         if prediction[0][0] >= 0.5:
