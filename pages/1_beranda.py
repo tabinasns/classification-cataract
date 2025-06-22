@@ -4,6 +4,7 @@ st.set_page_config(page_title="Beranda", initial_sidebar_state="collapsed", layo
 
 from PIL import Image
 import base64
+from streamlit_extras.switch_page_button import switch_page
 
 # --------- CSS -------------- #
 st.markdown("""
@@ -218,7 +219,7 @@ st.markdown("""
 _, col, _ = st.columns([1, 2, 1])
 with col:
     if st.button("🔍 Coba Deteksi", key="to_deteksi", use_container_width=True):
-        st.switch_page("pages/2_deteksi.py")
+        switch_page("2_deteksi")
 
 
 # if st.button("Coba Deteksi"):

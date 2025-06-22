@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 import importlib
+from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(
     page_title="Klasifikasi Katarak",
@@ -82,4 +83,4 @@ st.markdown('<div class="loader"></div>', unsafe_allow_html=True)
 time.sleep(3)
 
 # Redirect ke halaman beranda
-st.switch_page("pages/1_beranda.py")
+switch_page("1_beranda")
