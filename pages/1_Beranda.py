@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Beranda", layout="wide")
+st.set_page_config(page_title="Beranda",initial_sidebar_state="collapsed", layout="wide")
 
 from PIL import Image
 import base64
@@ -219,10 +219,3 @@ _, col, _ = st.columns([1, 2, 1])
 with col:
     if st.button("🔍 Coba Deteksi", key="to_deteksi", use_container_width=True):
         st.markdown('<meta http-equiv="refresh" content="0; url=./Deteksi">', unsafe_allow_html=True)
-
-# if st.button("Coba Deteksi"):
-#     st.query_params["page"] = "Cek Katarak"
-#     st.rerun()
-
-# if st.button("🔍 Coba Deteksi Sekarang"):
-#     st.switch_page("pages/2_deteksi.py")

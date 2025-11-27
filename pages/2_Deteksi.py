@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Deteksi Katarak", layout="wide")
+st.set_page_config(page_title="Deteksi Katarak",initial_sidebar_state="collapsed", layout="wide")
 
 import numpy as np
 import cv2
@@ -340,3 +340,4 @@ if uploaded_file is not None:
 
     else:
         st.warning("⚠️ Gambar tidak dikenali sebagai citra fundus.")
+        st.toast("Harap input ulang gambar", icon="❗")

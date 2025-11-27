@@ -1,6 +1,6 @@
 import streamlit as st 
 
-st.set_page_config(page_title="Informasi", layout="wide")
+st.set_page_config(page_title="Informasi", initial_sidebar_state="collapsed", layout="wide")
 
 import base64
 import pandas as pd
