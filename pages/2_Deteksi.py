@@ -10,13 +10,11 @@ from PIL import Image
 import base64
 
 # Load the trained model
-# Ubah ini dengan H5 mu Cap! 
 model_katarak = tf.keras.models.load_model('model/model_mobilenet_katarak_new.keras', compile=False)
 model_fundus = tf.keras.models.load_model('model/model_mobilenet_fundus.keras', compile=False)
 
 # Resize atur juga jgn lupa, samakan dengan model mu make pixel berapa!!
 # Fungsi preprocessing untuk CLAHE dan konversi ke grayscale
-st.text(model_katarak.summary())
 
 def preprocessing(img):
     image = np.array(img.resize((180, 180)))
